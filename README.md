@@ -3,12 +3,12 @@
 ## Referances
 
 ## Launch Application
-Using Arduino Create upload the sketch to your Arduino.
-Using the Terminal start your Node.js app using node app.js.
-Open up a browser and enter the URL http://localhost:3000/.
-Turn the dial on the Arduino device and watch the red square in the browser.
-Full tutorial URL:
-https://codeadam.ca/learning/arduino-to-nodejs.html
+- Using Arduino Create upload the sketch to your Arduino.
+- ``npm install``
+- Using the Terminal start your Node.js app using node app.js.
+- ``node app.js``
+- Open up a browser and enter the URL http://localhost:3000/.
+- Full tutorial URL: https://codeadam.ca/learning/arduino-to-nodejs.html
 
 ## Agenda
 - Intro to what microcontrollers is
