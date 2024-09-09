@@ -1,7 +1,5 @@
 # IoT
 
-## Referances
-
 ## Launch Application
 - Using Arduino Create upload the sketch to your Arduino.
 - ``npm install``
@@ -74,3 +72,6 @@
 3. **Write Code**: Program the Arduino Uno to interact with the connected modules. Sample code can be found in the `examples` directory.
 4. **Test Your Setup**: Use the Serial Monitor in the Arduino IDE to test the functionality of each module.
 
+## Referances
+- https://github.com/codeadamca/arduino-from-nodejs
+- https://github.com/codeadamca/arduino-to-nodejs?tab=readme-ov-file
