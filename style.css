@@ -9,6 +9,10 @@
     src:  url("ABCArizonaPlusVariable.ttf") format("truetype-variations");
   }
 
+  h1, p{
+    font-family: "Arizona";
+  }
+
 .wrapper{
     min-height: 100svh;
     min-width: 100vw;
@@ -19,6 +23,27 @@
     align-content: center;
     align-items: center;
 }
+
+.lottieWrapper{
+    min-height: 100svh;
+    min-width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    z-index: -1;
+}
+
+/* .lottie{
+    width: 600px;
+    height: 600px;
+   background-image: url('https://cdn.abcdinamo.com/media/News/Campaigns/Takeover/Erik-Carter/Dinamo-Update-Typefaces-Erik-Carter-Guest-Takeover-Future-of-Type-History-Illustration.gif');
+    background-position: center;
+    background-size: contain;
+} */
 
 #loadingWrapper{
     background-color: rgba(0, 0, 0, 0.100);
@@ -38,12 +63,68 @@
 .text{
     font-family: "Arizona";
     transition: all 0.3s ease;
-    font-variation-settings: "wght" 150;
-    font-variation-settings: "ital" 150;
-    font-variation-settings: "SRFF" 150;
+    font-variation-settings: "wght" 700,  "ital" 0, "SRFF" 0;
 }
 
 .text:hover {
-    font-variation-settings: "wght" 700, "ital" 12, "SRFF" 150; /* Add all variations here */
+    font-variation-settings: "wght" 700, "ital" 14, "SRFF" 100; /* Add all variations here */
 }
-  
+
+.container{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    padding: 8px 12px 8px 12px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.recording{
+    bottom: 20px;
+    left: 10px;
+    gap: 4px;  
+}
+
+.circle{
+    background-color: red;
+    height: 10px;
+    width: 10px;
+    border-radius: 10000%;
+}
+
+.textData{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-family: monospace;
+    gap: 12px;
+}
+
+.textRecording{
+    font-family: monospace;
+}
+
+.displayData{
+    bottom: 20px;
+    right: 10px;
+    flex-direction: column;     
+    width: fit-content;  
+}
+
+.controller{
+    top: 20px;
+    left: 10px;
+    flex-direction: row;  
+    gap: 12px;
+}
+
+.container p{
+    font-family: monospace;
+}
+
+button{
+    font-family: monospace;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+

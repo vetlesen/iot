@@ -4,32 +4,67 @@
 <head>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js'></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="confetti.css">
 </head>
 
 <body>
     <div class="wrapper">
+        <div class="recording container">
+            <p class="textRecording">Recording</p>
+            <div class="circle"></div>
+        </div>
+        <div class="displayData container">
+            <p class="textData">Data <span id="data-span">1</span></p>
+            <p class="textData">Height <span id="height-span">1</span></p>
+            <p class="textData">Width <span id="width-span">1</span></p>
+        </div>
+        <div class="controller container">
+            <p>Turn lights</p>
+            <button id="lightOn">On</button>
+            <button id="lightOff">Off</button>
+        </div>
         <div id="loadingWrapper">
             <div id="loading"></div>
         </div>
         <h1 class="text">Bielke&Yang</h1>
+        <div class="lottieWrapper">
+            <div class="lottie"></div>
+        </div>
     </div>
+
     <script>
         var socket = io();
         socket.on('data', function (data) {
             console.log(data);
             document.getElementById('loading').style.width = data + "%";
         });
+        document.getElementById('lightOn').onclick = function () {
+            socket.emit('lights', { "status": "1" });
+        };
+
+        document.getElementById('lightOff').onclick = function () {
+            socket.emit('lights', { "status": "0" });
+        };
     </script>
     <script>
+        // fake data
+        var fakeData = 100;
+        var fakeHeight = Math.floor(Math.random() * 100); // Random height
+        var fakeWidth = Math.floor(Math.random() * 500);  // Random width
         //change width of loading bar
-        document.getElementById('loading').style.width = 50 + "%";
+        document.getElementById('loading').style.width = fakeWidth + "px";
         //change background color with RGB and Alpha
-        document.getElementsByClassName('wrapper')[0].style.backgroundColor = "rgba(255, 255, 0, 0.5)";
+        document.getElementsByClassName('wrapper')[0].style.backgroundColor = `rgba(${fakeHeight}, ${fakeHeight}, 0, 0.4)`;
         //change font size 
         document.getElementsByClassName('text')[0].style.fontSize = "100px";
-        //change the variable font weights and slant
-
+        //change the variable font weights
+        // document.getElementsByClassName('text')[0].style.fontVariationSettings = '"wght" 100';
+        // display data
+        document.getElementById('data-span').innerText = fakeData;
+        document.getElementById('height-span').innerText = fakeHeight;
+        document.getElementById('width-span').innerText = fakeWidth;
     </script>
+
 </body>
 
 </html>
