@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js'></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="loadingWrapper">
+            <div id="loading"></div>
+        </div>
+        <h1 class="text">Bielke&Yang</h1>
+    </div>
+    <script>
+        var socket = io();
+        socket.on('data', function (data) {
+            console.log(data);
+            document.getElementById('loading').style.width = data + "%";
+        });
+    </script>
+    <script>
+        //change width of loading bar
+        document.getElementById('loading').style.width = 50 + "%";
+        //change background color with RGB and Alpha
+        document.getElementsByClassName('wrapper')[0].style.backgroundColor = "rgba(255, 255, 0, 0.5)";
+        //change font size 
+        document.getElementsByClassName('text')[0].style.fontSize = "100px";
+        //change the variable font weights and slant
+
+    </script>
+</body>
+
+</html>
