@@ -63,9 +63,9 @@
 38. Light-Seeking Sensors (x2)
 
 ### Additional Components
-- **Wires**
-- **PIR Sensor**
-- **1m RGB LED Strip**
+- Wires
+- PIR Sensor
+- 1m RGB LED Strip
 
 ## Getting Started
 
