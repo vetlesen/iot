@@ -3,7 +3,7 @@
 
 <head>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js'></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="confetti.css">
 </head>
 
@@ -60,6 +60,9 @@
             <div class="lottie"></div>
         </div>
     </div>
+    <script>
+        console.log('Script is running');
+    </script>
 
     <script>
         var socket = io();
@@ -80,14 +83,19 @@
         var fakeData = 100;
         var fakeHeight = Math.floor(Math.random() * 100); // Random height
         var fakeWidth = Math.floor(Math.random() * 500);  // Random width
+
         //change width of loading bar
         document.getElementById('loading').style.width = fakeWidth + "px";
+
         //change background color with RGB and Alpha
         document.getElementsByClassName('wrapper')[0].style.backgroundColor = `rgba(${fakeHeight}, ${fakeHeight}, 0, 0.4)`;
+
         //change font size 
         document.getElementsByClassName('text')[0].style.fontSize = "100px";
+
         //change the variable font weights
         // document.getElementsByClassName('text')[0].style.fontVariationSettings = '"wght" 100';
+
         // display data
         document.getElementById('data-span').innerText = fakeData;
         document.getElementById('height-span').innerText = fakeHeight;
