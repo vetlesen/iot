@@ -1,6 +1,11 @@
 # IoT
 
 ## Launch Application
+- Connect Arduino
+- Go to terminal and check what com port is used
+- type in this in terminal ``ls /dev/{tty,cu}.*``
+- Paste the com port in ``var port = new SerialPort(' paste in here ',{ ``
+- should look something like this ``/dev/tty.usbmodem101``
 - Using Arduino Create upload the sketch to your Arduino.
 - ``npm install``
 - Using the Terminal start your Node.js app using node app.js.
