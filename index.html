@@ -1,53 +1,93 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html class="no-js" lang="">
 
 <head>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js'></script>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="confetti.css">
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="theme-color" content="#fafafa" />
 </head>
 
 <body>
+    <div class="connect">
+        <div id="outDiv">
+            <textarea id="term_window" readonly>Hellorld!</textarea>
+        </div>
+        <div id="inDiv">
+            <textarea id="term_input"></textarea>
+            <button id="send" disabled>Send</button>
+            <button id="clear" disabled>Clear</button>
+        </div>
+        <div id="setDiv">
+            <button id="openclose_port">Open</button>
+            <div>
+                <span>Baud Rate: </span>
+                <select id="baud_rate">
+                    <option value="9600">9600</option>
+                    <option value="19200">19200</option>
+                    <option value="38400">38400</option>
+                    <option value="57600">57600</option>
+                    <option value="115200">115200</option>
+                </select><button id="change" disabled>Change</button>
+            </div>
+            <span id="port_info">Disconnected</span>
+        </div>
+    </div>
+
     <div class="wrapper">
         <div class="byLogo">
             <svg class="footer-logo" width="164" height="61" viewBox="0 0 164 61" version="1.1"
                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                style="opacity: 1; visibility: inherit; pointer-events: auto;">
+                style="opacity: 1; visibility: inherit; pointer-events: auto">
                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                     <g id="B&amp;Y-splash-01" transform="translate(-51.000000, -8630.000000)" fill="#000000">
                         <g id="Group-17" transform="translate(51.000000, 8630.000000)">
                             <path
                                 d="M17.3472,30.0967 L17.3472,55.8287 L20.3162,55.8287 C36.1512,55.8287 40.2752,50.3867 40.2752,42.9627 C40.2752,35.7867 34.0902,30.0967 22.2952,30.0967 L17.3472,30.0967 Z M17.3472,4.8587 L17.3472,26.6327 L22.2952,26.6327 C32.6872,26.6327 38.2962,23.0037 38.2962,15.7457 C38.2962,8.3227 34.1722,4.8587 20.8102,4.8587 L17.3472,4.8587 Z M24.2752,1.3947 C43.1612,1.3947 49.0182,6.2607 49.0182,14.5907 C49.0182,21.1067 44.3172,26.1377 35.6572,28.1177 C45.1412,28.4477 51.4922,34.0557 51.4922,41.5607 C51.4922,52.3657 42.1722,59.2937 25.7602,59.2937 L0.2742,59.2937 L6.9552,53.3547 L6.9552,7.3327 L0.2742,1.3947 L24.2752,1.3947 Z"
-                                id="letterB"
-                                style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1; visibility: inherit;"
-                                data-svg-origin="0.2742000222206116 1.394700050354004" transform="matrix(1,0,0,1,0,0)">
-                            </path>
+                                id="letterB" style="
+                    translate: none;
+                    rotate: none;
+                    scale: none;
+                    transform-origin: 0px 0px;
+                    opacity: 1;
+                    visibility: inherit;
+                  " data-svg-origin="0.2742000222206116 1.394700050354004" transform="matrix(1,0,0,1,0,0)"></path>
                             <path
                                 d="M91.8613,47.416 L75.5303,28.282 C71.1593,29.107 66.9533,32.983 66.9533,39.499 C66.9533,46.427 72.3973,52.86 81.3043,52.86 C84.6033,52.86 89.3053,51.54 91.8613,47.416 L91.8613,47.416 Z M94.8303,59.294 L96.3153,52.613 L92.9333,48.653 C91.1193,54.428 84.7683,60.283 74.8713,60.283 C63.9023,60.283 56.5613,52.86 56.5613,42.551 C56.5613,33.726 63.1593,26.633 72.0683,26.633 C72.9743,26.633 73.6343,26.715 74.2943,26.88 C70.9123,22.756 69.4283,19.787 69.4283,15.746 C69.4283,5.849 77.3463,0.405 86.2533,0.405 C92.1913,0.405 97.1393,3.869 97.1393,8.817 C97.1393,12.611 94.0063,15.746 90.2123,15.746 C86.4183,15.746 83.7783,13.271 83.7783,9.065 C83.7783,6.344 82.0473,5.353 79.9853,5.353 C77.3463,5.353 75.8613,7.333 75.8613,9.808 C75.8613,11.787 76.2733,13.519 79.9023,17.808 L90.2123,29.849 C97.3053,19.704 102.1713,17.726 106.0483,17.726 C110.1713,17.726 112.9753,21.189 112.9753,24.653 C112.9753,28.694 109.6763,31.086 106.5423,31.086 C103.0783,31.086 101.0993,27.375 98.5423,27.375 C96.3153,27.375 95.0783,28.529 92.3573,32.406 L109.8413,52.86 L116.7693,59.294 L94.8303,59.294 Z"
-                                id="letterAmpersand"
-                                style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1; visibility: inherit; pointer-events: auto;"
-                                data-svg-origin="56.56129837036133 0.4050000011920929" transform="matrix(1,0,0,1,0,0)">
-                            </path>
+                                id="letterAmpersand" style="
+                    translate: none;
+                    rotate: none;
+                    scale: none;
+                    transform-origin: 0px 0px;
+                    opacity: 1;
+                    visibility: inherit;
+                    pointer-events: auto;
+                  " data-svg-origin="56.56129837036133 0.4050000011920929" transform="matrix(1,0,0,1,0,0)"></path>
                             <polygon id="letterY"
                                 points="124.1646 59.2939 130.8446 53.3549 130.8446 36.5289 114.8446 7.4159 108.0816 1.3949 132.9066 1.3949 126.2256 7.3329 138.7626 30.2619 151.2996 7.3329 144.6186 1.3949 163.9996 1.3949 157.2376 7.4159 141.2376 36.5289 141.2376 53.4379 147.8346 59.2939"
-                                style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1; visibility: inherit;"
-                                data-svg-origin="108.08159637451172 1.3949000835418701" transform="matrix(1,0,0,1,0,0)">
-                            </polygon>
+                                style="
+                    translate: none;
+                    rotate: none;
+                    scale: none;
+                    transform-origin: 0px 0px;
+                    opacity: 1;
+                    visibility: inherit;
+                  " data-svg-origin="108.08159637451172 1.3949000835418701" transform="matrix(1,0,0,1,0,0)"></polygon>
                         </g>
                     </g>
                 </g>
             </svg>
         </div>
-        <div class="recording container">
+        <div class="recording container flex">
             <p class="textRecording">Recording</p>
             <div class="circle"></div>
         </div>
-        <div class="displayData container">
+        <div class="displayData container flex">
             <p class="textData">Data <span id="data-span">1</span></p>
-            <p class="textData">Height <span id="height-span">1</span></p>
-            <p class="textData">Width <span id="width-span">1</span></p>
+            <p class="textData">Mouse X <span id="x-pos">1</span></p>
+            <p class="textData">Mouse Y <span id="y-pos">1</span></p>
         </div>
-        <div class="controller container">
+        <div class="controller container flex">
             <p>Turn lights</p>
             <button id="lightOn">On</button>
             <button id="lightOff">Off</button>
@@ -55,53 +95,14 @@
         <div id="loadingWrapper">
             <div id="loading"></div>
         </div>
-        <h1 class="text">Bielke&Yang</h1>
+        <h1 class="text">Halla</h1>
         <div class="lottieWrapper">
             <div class="lottie"></div>
         </div>
     </div>
-    <script>
-        console.log('Script is running');
-    </script>
 
-    <script>
-        var socket = io();
-        socket.on('data', function (data) {
-            console.log(data);
-            document.getElementById('loading').style.width = data + "%";
-        });
-        document.getElementById('lightOn').onclick = function () {
-            socket.emit('lights', { "status": "1" });
-        };
-
-        document.getElementById('lightOff').onclick = function () {
-            socket.emit('lights', { "status": "0" });
-        };
-    </script>
-    <script>
-        // fake data
-        var fakeData = 100;
-        var fakeHeight = Math.floor(Math.random() * 100); // Random height
-        var fakeWidth = Math.floor(Math.random() * 500);  // Random width
-
-        //change width of loading bar
-        document.getElementById('loading').style.width = fakeWidth + "px";
-
-        //change background color with RGB and Alpha
-        document.getElementsByClassName('wrapper')[0].style.backgroundColor = `rgba(${fakeHeight}, ${fakeHeight}, 0, 0.4)`;
-
-        //change font size 
-        document.getElementsByClassName('text')[0].style.fontSize = "100px";
-
-        //change the variable font weights
-        // document.getElementsByClassName('text')[0].style.fontVariationSettings = '"wght" 100';
-
-        // display data
-        document.getElementById('data-span').innerText = fakeData;
-        document.getElementById('height-span').innerText = fakeHeight;
-        document.getElementById('width-span').innerText = fakeWidth;
-    </script>
-
+    <script src="js/script.js"></script>
+    <script src="js/interaction.js"></script>
 </body>
 
 </html>
