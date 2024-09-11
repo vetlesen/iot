@@ -79,4 +79,5 @@
 
 ## Referances
 - https://github.com/codeadamca/arduino-from-nodejs
-- https://github.com/codeadamca/arduino-to-nodejs?tab=readme-ov-file
+- https://github.com/codeadamca/arduino-to-nodejs
+- https://github.com/sparkfunX/WebTerminalDemo
