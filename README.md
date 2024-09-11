@@ -1,7 +1,7 @@
 # IoT 
 https://en.wikipedia.org/wiki/Internet_of_things
 
-## Start
+## First step
 - Download VS code https://code.visualstudio.com/
 - Download the extension inside VS code extension id ``ritwickdey.LiveServer``
 - Download Arduino IDE https://www.arduino.cc/en/software
