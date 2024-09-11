@@ -5,6 +5,62 @@ let port; // current SerialPort object
 let reader; // current port reader object so we can call .cancel() on it to interrupt port reading
 let buffer = ""; // Buffer to store partial data
 
+/* 
+            
+            ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+            ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+            ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+            ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+
+*/
+
+/* INFORMATION make the b&y logo jump jumping motion */
+
+function jumpElements() {
+  // Select the elements to animate
+  let ampersand = document.getElementById("letterAmpersand");
+  let letterB = document.getElementById("letterB");
+  let letterY = document.getElementById("letterY");
+
+  // Function to animate the jump of a single element
+  function jumpElement(element, delay) {
+    setTimeout(() => {
+      // Apply the jump (matrix transform to move up by -30)
+      element.setAttribute("transform", "matrix(1,0,0,1,0,-30)");
+
+      // Apply cubic-bezier for smooth jump effect
+      element.style.transition =
+        "transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)";
+
+      // Return element to original position after the jump
+      setTimeout(() => {
+        element.setAttribute("transform", "matrix(1,0,0,1,0,0)");
+      }, 600); // Match the jump duration
+    }, delay);
+  }
+
+  // Stagger the jumps with delays (0ms for B, 200ms for &, 400ms for Y)
+  jumpElement(letterB, 0); // Jump first, no delay for B
+  jumpElement(ampersand, 100); // 200ms delay for Ampersand
+  jumpElement(letterY, 300); // 400ms delay for Y
+}
+// Function to check parsedValue and trigger the jump
+function checkAndJump(parsedValue) {
+  if (parsedValue > 50) {
+    jumpElements();
+  }
+}
+
+/* 
+            
+            ⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️
+            ⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️
+            ⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️
+            ⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️
+
+            
+*/
+
 // Do these things when the window is done loading
 window.onload = function () {
   // Check to make sure we can actually do serial stuff
@@ -128,22 +184,26 @@ async function openClose() {
 
             // Assuming 'line' contains a number that you want to use to change the width
             let parsedValue = parseInt(line, 10); // Parse the value as an integer
-            /* --------------- */
-            /* --------------- */
-            /* --------------- */
-            /* --------------- */
-            /* --------------- */
-            /* --------------- */
 
-            /* CHANGE THE CODE HERE */
+            /* 
+            
+            ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+            ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+            ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+            ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+
+            */
+
+            /* INFORMATION Here you can change behaviour */
 
             // Check if the parsed value is a valid number
             if (!isNaN(parsedValue)) {
+              // 📊
               // Update the width of the loading bar with the received value
-
               document.getElementById("loading").style.width =
                 parsedValue + "%";
 
+              //  🎨
               //change background color with RGB and Alpha
               // document.getElementsByClassName(
               //   "wrapper"
@@ -155,10 +215,12 @@ async function openClose() {
               // document.getElementsByClassName("text")[0].style.fontSize =
               //   parsedValue * 2 + "px";
 
+              // ⛲️
               //change font size
               document.getElementsByClassName("text")[0].style.fontSize =
                 100 + "px";
 
+              // 🏋️
               //change the variable font weights
               document.getElementsByClassName(
                 "text"
@@ -166,18 +228,22 @@ async function openClose() {
                 parsedValue * 8
               }, "ital" ${parsedValue}, "SRFF" ${parsedValue * 3}`;
 
+              // 🖥️
               // display data
               document.getElementById("data-span").innerText = parsedValue;
+
+              checkAndJump(parsedValue);
             }
 
-            /* CHANGE THE CODE HERE */
+            /* 
+            
+            ⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️
+            ⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️
+            ⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️
+            ⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️
 
-            /* --------------- */
-            /* --------------- */
-            /* --------------- */
-            /* --------------- */
-            /* --------------- */
-            /* --------------- */
+            
+            */
 
             document.getElementById("term_window").value += value; // write the incoming string to the term_window textarea
           }
