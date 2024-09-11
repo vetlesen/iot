@@ -5,7 +5,7 @@ https://en.wikipedia.org/wiki/Internet_of_things
 - Download VS code https://code.visualstudio.com/
 - Download the extension inside VS code extension id ``ritwickdey.LiveServer``
 - Download Arduino IDE https://www.arduino.cc/en/software
-- Download this code repo
+- Download this code repo ``green button with code``and ``download zip``
 
 ## Launch Application
 - Connect Arduino
