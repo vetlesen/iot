@@ -2,16 +2,10 @@
 
 ## Launch Application
 - Connect Arduino
-- Go to terminal and check what com port is used
-- type in this in terminal ``ls /dev/{tty,cu}.*``
-- Paste the com port in ``var port = new SerialPort(' paste in here ',{ ``
-- should look something like this ``/dev/tty.usbmodem101``
-- Using Arduino Create upload the sketch to your Arduino.
-- ``npm install``
-- Using the Terminal start your Node.js app using node app.js.
-- ``node app.js``
-- Open up a browser and enter the URL http://localhost:3000/.
-- Full tutorial URL: https://codeadam.ca/learning/arduino-to-nodejs.html
+- Load arduino code to arduino ``filename.ino``
+- Open repo in vs code
+- Start live server with extension id ``ritwickdey.LiveServer``
+- Open server ``localhost:xxxx``
 
 ## Agenda
 - Intro to what microcontrollers is
@@ -76,6 +70,24 @@
 2. **Connect Modules**: Use the provided wires to connect various sensors and modules from the Playknowlogy kit to the Arduino Uno.
 3. **Write Code**: Program the Arduino Uno to interact with the connected modules. Sample code can be found in the `examples` directory.
 4. **Test Your Setup**: Use the Serial Monitor in the Arduino IDE to test the functionality of each module.
+
+## S/O
+
+This is a simple demo of the [Web Serial API](https://web.dev/serial/) which implements a bare-bones serial terminal.
+
+This demo uses TextEncoderStream and TextDecoderStream to encode/decode the serial stream, so it only deals in strings and not raw bytes.
+Please see the comments in script.js for more detail on how the Web Serial API is being utilized. 
+
+You can play with the live demo here:
+
+https://sparkfunx.github.io/WebTerminalDemo/
+
+It also accepts a query string to prefill the outgoing text box, like this:
+
+https://sparkfunx.github.io/WebTerminalDemo/?prefill=This%20is%20prefilled%20text
+
+Distributed as-is; no warranty is given.
+
 
 ## Referances
 - https://github.com/codeadamca/arduino-from-nodejs
