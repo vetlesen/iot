@@ -1,10 +1,17 @@
-# IoT
+# IoT 
+https://en.wikipedia.org/wiki/Internet_of_things
+
+## First step
+- Download VS code https://code.visualstudio.com/
+- Download the extension inside VS code extension id ``ritwickdey.LiveServer``
+- Download Arduino IDE https://www.arduino.cc/en/software
+- Download this code repo ``green button with code``and ``download zip``
 
 ## Launch Application
 - Connect Arduino
 - Load arduino code to arduino ``filename.ino``
 - Open repo in vs code
-- Start live server with extension id ``ritwickdey.LiveServer``
+- Start live server
 - Open server ``localhost:xxxx``
 
 ## Agenda
