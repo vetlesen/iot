@@ -5,6 +5,7 @@ https://en.wikipedia.org/wiki/Internet_of_things
 - Download VS code https://code.visualstudio.com/
 - Download the extension inside VS code extension id ``ritwickdey.LiveServer``
 - Download Arduino IDE https://www.arduino.cc/en/software
+- in Arduino IDE go to library manager and download ``Adafruit Neopixel`` by adafruit
 - Download this code repo ``green button with code``and ``download zip``
 
 ## Launch Application
