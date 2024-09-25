@@ -72,30 +72,15 @@ https://en.wikipedia.org/wiki/Internet_of_things
 - PIR Sensor
 - 1m RGB LED Strip
 
-## Getting Started
-
-1. **Assemble the Arduino Uno**: Connect the Arduino Uno to your computer using the USB-B cable.
-2. **Connect Modules**: Use the provided wires to connect various sensors and modules from the Playknowlogy kit to the Arduino Uno.
-3. **Write Code**: Program the Arduino Uno to interact with the connected modules. Sample code can be found in the `examples` directory.
-4. **Test Your Setup**: Use the Serial Monitor in the Arduino IDE to test the functionality of each module.
 
 ## S/O
 
-This is a simple demo of the [Web Serial API](https://web.dev/serial/) which implements a bare-bones serial terminal.
-
-This demo uses TextEncoderStream and TextDecoderStream to encode/decode the serial stream, so it only deals in strings and not raw bytes.
-Please see the comments in script.js for more detail on how the Web Serial API is being utilized. 
+This is a simple demo of the [Web Serial API](https://web.dev/serial/) which implements a bare-bones serial terminal. This demo uses TextEncoderStream and TextDecoderStream to encode/decode the serial stream, so it only deals in strings and not raw bytes. Please see the comments in script.js for more detail on how the Web Serial API is being utilized. 
 
 You can play with the live demo here:
-
 https://sparkfunx.github.io/WebTerminalDemo/
 
-It also accepts a query string to prefill the outgoing text box, like this:
-
-https://sparkfunx.github.io/WebTerminalDemo/?prefill=This%20is%20prefilled%20text
-
-Distributed as-is; no warranty is given.
-
+It also accepts a query string to prefill the outgoing text box, like this: https://sparkfunx.github.io/WebTerminalDemo/?prefill=This%20is%20prefilled%20textDistributed as-is; no warranty is given.
 
 ## Referances
 - https://github.com/codeadamca/arduino-from-nodejs
