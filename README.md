@@ -15,12 +15,6 @@ https://en.wikipedia.org/wiki/Internet_of_things
 - Start live server
 - Open server ``localhost:xxxx``
 
-## Agenda
-- Intro to what microcontrollers is
-- What they can be used for
-- How to use it
-- Some code examples
-
 ## Parts List
 
 ### Starter Kit Components
