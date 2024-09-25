@@ -82,14 +82,14 @@ It also accepts a query string to prefill the outgoing text box, like this: http
 - https://github.com/sparkfunX/WebTerminalDemo
 
   ## Visual references
-  - https://modemworks.com/projects/terra/
-  - https://modemworks.com/projects/nike-air-max-pulse-at-house-of-innovation-paris/?referal=image
-  - https://skrekkogle.com/projects/plugg/
-  - https://feed.no/rom25
-  - https://ezramiller.biz/projects/google-i-o
-  - https://tinanded.com/projects/life-forces
-  - https://www.instagram.com/baast.studio/
-  - https://field.io/work/on-running-try-on-global-retail-interactive
-  - https://field.io/work/nike-force-of-nature
-  - https://field.io/work/together-the-distance-between-us
-  - 
+- https://modemworks.com/projects/terra/
+- https://modemworks.com/projects/nike-air-max-pulse-at-house-of-innovation-paris/?referal=image
+- https://skrekkogle.com/projects/plugg/
+- https://feed.no/rom25
+- https://ezramiller.biz/projects/google-i-o
+- https://tinanded.com/projects/life-forces
+- https://www.instagram.com/baast.studio/
+- https://field.io/work/on-running-try-on-global-retail-interactive
+- https://field.io/work/nike-force-of-nature
+- https://field.io/work/together-the-distance-between-us
+- 
